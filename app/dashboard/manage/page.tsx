@@ -1,3 +1,5 @@
+"use client";
+
 // Kullanıcı ayarları ve kategori yönetimi sayfası
 // Kullanıcı burada varsayılan para birimini ve gelir/gider kategorilerini yönetebilir
 
