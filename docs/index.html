@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fincare: personal finance tracker</title>
+  <meta name="description" content="Fincare is an open-source personal finance tracker. Log income and expenses, follow bills and goals, and get monthly reports with AI suggestions.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fincare: personal finance tracker">
+  <meta property="og:description" content="Open-source personal finance tracker built with Next.js, Prisma and Gemini.">
+  <meta property="og:url" content="https://erenemrearik.github.io/fincare/">
+  <meta property="og:image" content="https://erenemrearik.github.io/fincare/screenshots/dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Fincare home">
+        <picture>
+          <source srcset="assets/logo-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="assets/logo-light.png" alt="Fincare" width="124" height="40">
+        </picture>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#tour" data-i18n="nav.tour">Tour</a>
+        <a href="#run" data-i18n="nav.run">Run it</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+        </div>
+        <a class="btn btn-small" href="https://github.com/erenemrearik/fincare" data-i18n="nav.github">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 data-i18n="hero.title">See where your money goes.</h1>
+          <p class="lede" data-i18n="hero.lede">Fincare is an open-source personal finance tracker. Log income and expenses in categories you define, keep an eye on bills and savings goals, and get monthly reports with suggestions from Gemini.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/erenemrearik/fincare" data-i18n="hero.cta">View the source on GitHub</a>
+            <a class="btn btn-quiet" href="#run" data-i18n="hero.cta2">Run it locally</a>
+          </div>
+          <p class="note" data-i18n="hero.note">Free and MIT licensed. The interface is in Turkish for now.</p>
+        </div>
+        <figure class="hero-shot">
+          <picture>
+            <source srcset="screenshots/dashboard-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="screenshots/dashboard.png" alt="Fincare dashboard with income, expense and balance cards, a category breakdown and a monthly history chart" width="1920" height="1634" fetchpriority="high">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section id="tour" class="tour" aria-labelledby="tour-title">
+      <div class="wrap">
+        <h2 id="tour-title" class="section-title" data-i18n="tour.title">A tour of the app</h2>
+        <p class="section-lede" data-i18n="tour.lede">These are screenshots of the running app, with sample data.</p>
+      </div>
+
+      <article class="stop wrap">
+        <div class="stop-copy">
+          <h3 data-i18n="t1.title">Every transaction, in your own categories</h3>
+          <p data-i18n="t1.body">Add income or an expense with an amount, a date, a note and an emoji category you created. The table sorts and filters by category and type, and exports to CSV.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="screenshots/transaction-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="screenshots/transaction.png" alt="Transactions table filtered by category, with income in green and expenses in red" width="1920" height="911" loading="lazy">
+          </picture>
+        </figure>
+      </article>
+
+      <article class="stop wrap flip">
+        <div class="stop-copy">
+          <h3 data-i18n="t2.title">Bills and subscriptions before they're due</h3>
+          <p data-i18n="t2.body">Track weekly, monthly or yearly bills, subscriptions and recurring income. Separate views show what's coming up and what's overdue.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="screenshots/bills-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="screenshots/bills.png" alt="Bills page listing recurring payments with their next due dates" width="1920" height="911" loading="lazy">
+          </picture>
+        </figure>
+      </article>
+
+      <article class="stop wrap">
+        <div class="stop-copy">
+          <h3 data-i18n="t3.title">Goals you can follow</h3>
+          <p data-i18n="t3.body">Set monthly, yearly or savings goals with a target amount and date, update your progress and see how much is left.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="screenshots/goals-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="screenshots/goals-1.png" alt="Goals page with progress bars toward each savings target" width="1920" height="911" loading="lazy">
+          </picture>
+        </figure>
+      </article>
+
+      <article class="stop wrap flip">
+        <div class="stop-copy">
+          <h3 data-i18n="t4.title">Reports, with a second opinion</h3>
+          <p data-i18n="t4.body">Daily and monthly reports with bar, line and pie charts. Export them to PDF with the charts included, or to CSV. Gemini reads the period and points out where you could save.</p>
+          <p><a class="text-link" href="samples/monthly-report-sample.pdf" data-i18n="t4.link">Open a sample PDF report</a></p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <img src="screenshots/reports.png" alt="Monthly report with income and expense charts and an AI insights panel" width="1920" height="3029" loading="lazy">
+          </picture>
+        </figure>
+      </article>
+
+      <article class="stop wrap">
+        <div class="stop-copy">
+          <h3 data-i18n="t5.title">Your currency, your categories</h3>
+          <p data-i18n="t5.body">Pick USD, EUR, GBP, JPY, INR or TRY, manage your income and expense categories, and switch between light and dark themes.</p>
+        </div>
+        <figure class="shot">
+          <picture>
+            <source srcset="screenshots/manage-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="screenshots/manage.png" alt="Settings page with the currency picker and the category lists" width="1920" height="948" loading="lazy">
+          </picture>
+        </figure>
+      </article>
+    </section>
+
+    <section id="run" class="run" aria-labelledby="run-title">
+      <div class="wrap run-grid">
+        <div>
+          <h2 id="run-title" class="section-title" data-i18n="run.title">Run it on your machine</h2>
+          <p class="section-lede" data-i18n="run.lede">You need Node.js 20 or newer, a PostgreSQL database and a free Clerk app. A Gemini key is optional.</p>
+          <dl class="stack">
+            <div><dt data-i18n="stack.app">App</dt><dd>Next.js 15, React 18, TypeScript</dd></div>
+            <div><dt data-i18n="stack.ui">Interface</dt><dd>Tailwind CSS 4, shadcn/ui, Recharts</dd></div>
+            <div><dt data-i18n="stack.data">Data</dt><dd>Prisma, PostgreSQL</dd></div>
+            <div><dt data-i18n="stack.auth">Sign-in</dt><dd>Clerk</dd></div>
+            <div><dt data-i18n="stack.ai">AI</dt><dd>Google Gemini</dd></div>
+          </dl>
+        </div>
+        <div class="code-block">
+          <pre id="setup-code"><code>git clone https://github.com/erenemrearik/fincare.git
+cd fincare
+npm install
+cp .env.example .env    # add your database and Clerk keys
+npx prisma migrate deploy
+npm run dev</code></pre>
+          <button type="button" class="copy" data-copy="setup-code" data-i18n="run.copy">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap closing-inner">
+        <h2 class="section-title" data-i18n="close.title">Started as a graduation project. Growing into a product.</h2>
+        <p class="section-lede" data-i18n="close.body">Fincare is developed in the open. If it's useful to you, a star on GitHub helps other people find it, and issues and pull requests are welcome.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/erenemrearik/fincare" data-i18n="close.cta">Star Fincare on GitHub</a>
+          <a class="btn btn-quiet" href="https://github.com/erenemrearik/fincare/issues" data-i18n="close.cta2">Open an issue</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>Fincare</span>
+      <span data-i18n="footer.license">MIT License</span>
+      <span><span data-i18n="footer.by">Made by</span> <a href="https://github.com/erenemrearik">Eren Emre Arık</a></span>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

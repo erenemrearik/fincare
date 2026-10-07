@@ -8,7 +8,7 @@
 
 ### Yapay zekâ destekli kişisel finans takibi
 
-[English](README.md) · **Türkçe**
+[English](README.md) · **Türkçe** · [Web sitesi](https://erenemrearik.github.io/fincare/)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)

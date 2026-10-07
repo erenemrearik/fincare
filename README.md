@@ -8,7 +8,7 @@
 
 ### Personal finance tracking with AI-powered insights
 
-**English** · [Türkçe](README.tr.md)
+**English** · [Türkçe](README.tr.md) · [Website](https://erenemrearik.github.io/fincare/)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
