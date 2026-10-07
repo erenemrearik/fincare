@@ -4,8 +4,8 @@ import { redirect } from "next/navigation";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "*";
-const MODEL_NAME = "gemini-2.0-flash"; 
+const API_KEY = process.env.GEMINI_API_KEY;
+const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-3.6-flash";
 
 export async function POST(request: Request) {
   const user = await currentUser();
@@ -29,13 +29,6 @@ export async function POST(request: Request) {
     }
 
     const genAI = new GoogleGenerativeAI(API_KEY);
-    
-    try {
-      const result = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`);
-      const models = await result.json();
-    } catch (listError) {
-    }
-    
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
     // Prompt hazırlama

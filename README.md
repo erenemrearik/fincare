@@ -154,6 +154,7 @@ Fill in `.env`:
 | `NEXT_PUBLIC_CLERK_SIGN_IN_URL` | ✅ | `/sign-in` |
 | `NEXT_PUBLIC_CLERK_SIGN_UP_URL` | ✅ | `/sign-up` |
 | `GEMINI_API_KEY` | ➖ | Gemini API key for AI insights. Without it, rule-based insights are shown. |
+| `GEMINI_MODEL` | ➖ | Gemini model to use. Defaults to `gemini-3.6-flash`. |
 
 To start a local PostgreSQL with Docker:
 

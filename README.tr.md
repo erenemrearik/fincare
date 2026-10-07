@@ -154,6 +154,7 @@ cp .env.example .env
 | `NEXT_PUBLIC_CLERK_SIGN_IN_URL` | ✅ | `/sign-in` |
 | `NEXT_PUBLIC_CLERK_SIGN_UP_URL` | ✅ | `/sign-up` |
 | `GEMINI_API_KEY` | ➖ | AI önerileri için Gemini API anahtarı. Verilmezse kural tabanlı öneriler gösterilir. |
+| `GEMINI_MODEL` | ➖ | Kullanılacak Gemini modeli. Varsayılan: `gemini-3.6-flash`. |
 
 Docker ile yerel bir PostgreSQL başlatmak için:
 
