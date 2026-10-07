@@ -5,7 +5,7 @@ import { GetCategoriesStatsType } from "@/app/api/stats/categories/route";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { DateToUTCDate, GetFormatterForCurrency } from "@/lib/helpers";
+import { DateRangeToQuery, GetFormatterForCurrency } from "@/lib/helpers";
 import { TransactionType } from "@/lib/types";
 import { UserSettings } from "@prisma/client";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
@@ -26,7 +26,7 @@ function CategoriesStats({ from, to, userSettings }: Props) {
     // Tarih aralığı değiştiğinde verileri tekrar çek
     useEffect(() => {
         setIsLoading(true);
-        fetch(`/api/stats/categories?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`)
+        fetch(`/api/stats/categories?${DateRangeToQuery(from, to)}`)
             .then(res => res.json())
             .then(responseData => {
                 setData(responseData);

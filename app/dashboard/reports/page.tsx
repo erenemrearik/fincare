@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie } from "recharts";
-import { DateToUTCDate, GetFormatterForCurrency } from "@/lib/helpers";
+import { DateRangeToQuery, GetFormatterForCurrency } from "@/lib/helpers";
 import { GetTransactionHistoryResponseType } from "@/app/api/transactions-history/route";
 import { GetHistoryDataReturnType } from "@/app/api/history-data/route";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
@@ -50,7 +50,7 @@ function MonthlyReport({ userSettings }: { userSettings: UserSettings }) {
         setHistoryData([]);
       });
       
-    fetch(`/api/transactions-history?from=${DateToUTCDate(dateRange.from)}&to=${DateToUTCDate(dateRange.to)}`)
+    fetch(`/api/transactions-history?${DateRangeToQuery(dateRange.from, dateRange.to)}`)
       .then(res => {
         if (!res.ok) {
           return res.json().then(err => {

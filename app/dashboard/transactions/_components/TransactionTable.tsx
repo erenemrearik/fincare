@@ -1,7 +1,7 @@
 "use client";
 
 import { GetTransactionHistoryResponseType } from '@/app/api/transactions-history/route';
-import { DateToUTCDate } from '@/lib/helpers';
+import { DateRangeToQuery } from '@/lib/helpers';
 import {
     ColumnDef,
     ColumnFiltersState,
@@ -146,7 +146,7 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 function TransactionTable({ from, to }: Props) {
     const [sorting, setSorting] = useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-    const url = `/api/transactions-history?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`;
+    const url = `/api/transactions-history?${DateRangeToQuery(from, to)}`;
     const { data: historyData = emptyData, isLoading, mutate } = useSWR(url, fetcher, { revalidateOnFocus: true });
 
     // CSV dışa aktarma işlemi

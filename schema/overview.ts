@@ -10,7 +10,7 @@ export const OverviewQuerySchema = z.object({
 
     const days = differenceInDays(to, from);
 
-    const isValidRange = days > 0 && days < MAX_DATE_RANGE_DAYS;
+    const isValidRange = to >= from && days <= MAX_DATE_RANGE_DAYS;
 
     return isValidRange;
 })

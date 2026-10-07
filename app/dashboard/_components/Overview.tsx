@@ -15,7 +15,7 @@ import SkeletonWrapper from "@/components/SkeletonWrapper";
 import { TrendingUp, TrendingDown, CalendarDays, AlertTriangle, PiggyBank, Target, CheckCircle2, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { DateToUTCDate } from "@/lib/helpers";
+import { DateRangeToQuery } from "@/lib/helpers";
 import dynamic from "next/dynamic";
 
 const PieChartComponent = dynamic(() => import('./PieChart'), { ssr: false });
@@ -54,7 +54,7 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
         setIsLoadingCategories(true);
         const fetchCategoryData = async () => {
             try {
-                const response = await fetch(`/api/stats/categories?from=${DateToUTCDate(dateRange.from)}&to=${DateToUTCDate(dateRange.to)}`);
+                const response = await fetch(`/api/stats/categories?${DateRangeToQuery(dateRange.from, dateRange.to)}`);
                 if (!response.ok) {
                     setCategoryData([]);
                     return;

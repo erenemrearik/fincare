@@ -3,7 +3,7 @@
 import { GetBalanceStatsResponseType } from "@/app/api/stats/balance/route";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
 import { Card } from "@/components/ui/card";
-import { DateToUTCDate, GetFormatterForCurrency } from "@/lib/helpers";
+import { DateRangeToQuery, GetFormatterForCurrency } from "@/lib/helpers";
 import { UserSettings } from "@prisma/client";
 import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -22,7 +22,7 @@ function StatsCards({ userSettings, from, to }: Props) {
     const fetchStats = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`/api/stats/balance?from=${DateToUTCDate(from)}&to=${DateToUTCDate(to)}`);
+            const response = await fetch(`/api/stats/balance?${DateRangeToQuery(from, to)}`);
             const data = await response.json();
             setStats(data);
         } catch (error) {
