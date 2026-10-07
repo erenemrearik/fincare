@@ -308,7 +308,7 @@ export default function AIInsights({ data, transactionData, type, currency }: AI
           <span>Kalan günlük kullanım</span>
           <span>{dailyLeft} / {dailyLimit}</span>
         </div>
-        <Progress value={100 - progressValue} indicator="bg-gradient-to-r from-emerald-400 to-emerald-600" className="h-2 rounded-full w-full" />
+        <Progress value={100 - progressValue} indicator="bg-linear-to-r from-emerald-400 to-emerald-600" className="h-2 rounded-full w-full" />
       </div>
       {isLoading ? (
         <div className="space-y-2">

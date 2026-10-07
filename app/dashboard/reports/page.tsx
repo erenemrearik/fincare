@@ -181,7 +181,7 @@ function MonthlyReport({ userSettings }: { userSettings: UserSettings }) {
           </CardContent>
         </Card>
         
-        <Card className="w-full sm:w-auto flex-grow">
+        <Card className="w-full sm:w-auto grow">
           <CardHeader className="pb-2">
             <CardTitle>Rapor Özeti</CardTitle>
             <CardDescription>Aylık finansal özet</CardDescription>
@@ -526,7 +526,7 @@ function DailyReport({ userSettings }: { userSettings: UserSettings }) {
             />
           </CardContent>
         </Card>
-        <Card className="w-full sm:w-auto flex-grow">
+        <Card className="w-full sm:w-auto grow">
           <CardHeader className="pb-2">
             <CardTitle>Günlük Özet</CardTitle>
             <CardDescription>Seçili günün finansal özeti</CardDescription>

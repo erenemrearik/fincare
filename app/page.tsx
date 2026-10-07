@@ -14,7 +14,7 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 via-blue-50 to-blue-200 dark:from-background dark:via-background dark:to-background">
+    <div className="min-h-screen flex flex-col bg-linear-to-br from-blue-100 via-blue-50 to-blue-200 dark:from-background dark:via-background dark:to-background">
       <MarketingHeader />
       <main className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center gap-12">
         <section className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-5xl">

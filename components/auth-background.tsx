@@ -126,7 +126,7 @@ export function AuthBackground() {
   return (
     <>
       <canvas ref={canvasRef} className="fixed inset-0 -z-10 h-full w-full" aria-hidden="true" />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/40 to-background/70 backdrop-blur-[1px]" />
+      <div className="fixed inset-0 -z-10 bg-linear-to-b from-background/70 via-background/40 to-background/70 backdrop-blur-[1px]" />
     </>
   )
 }

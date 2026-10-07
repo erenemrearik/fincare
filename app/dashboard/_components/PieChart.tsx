@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload, currency = 'TRY', getTooltip }: any) =
     const value = payload[0].value || 0;
     const typeLabel = getTooltip ? getTooltip(entry) : (entry.type === "expense" ? "Gider" : "Gelir");
     return (
-      <div className="bg-white dark:bg-gray-800 p-2 border rounded shadow text-sm">
+      <div className="bg-white dark:bg-gray-800 p-2 border rounded shadow-sm text-sm">
         <p className="font-medium">{payload[0].name}</p>
         <p>
           {new Intl.NumberFormat('tr-TR', { 
